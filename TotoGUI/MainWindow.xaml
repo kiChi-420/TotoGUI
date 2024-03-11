@@ -7,10 +7,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="255" Width="389">
     <Grid Margin="0,0,0,-6">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="314*"/>
+            <ColumnDefinition Width="75*"/>
+        </Grid.ColumnDefinitions>
         <Label Content="Kérem a forduló eredményeit [1, 2, X]:" HorizontalAlignment="Left" Margin="18,38,0,0" VerticalAlignment="Top"/>
-        <TextBox MaxLength="20" HorizontalAlignment="Left" Margin="33,69,0,0" TextWrapping="Wrap" Text="12X12X12X12X12" VerticalAlignment="Top" Width="195"/>
-        <CheckBox Content="Nem megfelelő a karakterlánc hossza ()" HorizontalAlignment="Left" Margin="18,106,0,0" VerticalAlignment="Top"/>
-        <CheckBox Content="Helytelen karakter az eredményekben ()" HorizontalAlignment="Left" Margin="18,144,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Eredmenyek" MaxLength="20" HorizontalAlignment="Left" Margin="33,69,0,0" TextWrapping="Wrap" Text="12X12X12X12X12" VerticalAlignment="Top" Width="195" TextChanged="Eredmenyek_TextChanged_1"/>
+        <CheckBox x:Name="TextLengthCBox" Content="Karakterlánc hossza (14)" HorizontalAlignment="Left" Margin="18,106,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked" IsEnabled="False"/>
+        <CheckBox x:Name="IncorrectCharCBox" Content="Helytelen karakter az eredményekben: " HorizontalAlignment="Left" Margin="18,144,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked_1" IsEnabled="False"/>
         <Button Content="Eredmények mentése" HorizontalAlignment="Left" Margin="33,184,0,0" VerticalAlignment="Top"/>
 
     </Grid>

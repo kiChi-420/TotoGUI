@@ -24,5 +24,30 @@ namespace TotoGUI
         {
             InitializeComponent();
         }
+
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CheckBox_Checked_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Eredmenyek_TextChanged_1(object sender, TextChangedEventArgs e)
+        {
+            TextLengthCBox.Content = "Megfelelő a karakterlánc hossza: ";
+            if (Eredmenyek.Text.Length == 14)
+            {
+                TextLengthCBox.IsChecked = true;
+                TextLengthCBox.Content += $"{Eredmenyek.Text.Length + " " + ((char)0x221A).ToString()}";
+            }
+
+            else
+            {
+
+            }
+        }
     }
 }
