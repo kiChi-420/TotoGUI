@@ -5,17 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TotoGUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="255" Width="389">
+        Title="Totó eredmény hozzáadása" Height="272" Width="389">
     <Grid Margin="0,0,0,-6">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="314*"/>
-            <ColumnDefinition Width="75*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
-        <Label Content="Kérem a forduló eredményeit [1, 2, X]:" HorizontalAlignment="Left" Margin="18,38,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="Eredmenyek" MaxLength="20" HorizontalAlignment="Left" Margin="33,69,0,0" TextWrapping="Wrap" Text="12X12X12X12X12" VerticalAlignment="Top" Width="195" TextChanged="Eredmenyek_TextChanged_1"/>
-        <CheckBox x:Name="TextLengthCBox" Content="Karakterlánc hossza (14)" HorizontalAlignment="Left" Margin="18,106,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked" IsEnabled="False"/>
-        <CheckBox x:Name="IncorrectCharCBox" Content="Helytelen karakter az eredményekben: " HorizontalAlignment="Left" Margin="18,144,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked_1" IsEnabled="False"/>
-        <Button Content="Eredmények mentése" HorizontalAlignment="Left" Margin="33,184,0,0" VerticalAlignment="Top"/>
+        <Label Content="Kérem a forduló eredményeit [1, 2, X]:" HorizontalAlignment="Left" Margin="18,38,0,0" VerticalAlignment="Top" Height="26" Width="210"/>
+        <TextBox x:Name="Eredmenyek" MaxLength="14" HorizontalAlignment="Left" Margin="33,69,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="195" TextChanged="Eredmenyek_TextChanged_1" Height="18"/>
+        <CheckBox x:Name="TextLengthCBox" Content="Karakterlánc hossza (14)" HorizontalAlignment="Left" Margin="18,106,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked" IsEnabled="False" Height="15" Width="176"/>
+        <CheckBox x:Name="IncorrectCharCBox" Content="Helytelen karakter az eredményekben: " Margin="18,144,71,0" VerticalAlignment="Top" Checked="CheckBox_Checked_1" IsEnabled="False" Height="15"/>
+        <Button x:Name="SubmitBtn" Content="Eredmények mentése" HorizontalAlignment="Left" Margin="33,184,0,0" VerticalAlignment="Top" Height="20" Width="117" IsEnabled="False"/>
 
     </Grid>
 </Window>

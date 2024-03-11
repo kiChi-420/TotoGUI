@@ -25,6 +25,21 @@ namespace TotoGUI
             InitializeComponent();
         }
 
+        private void Eredmenyek_TextChanged_1(object sender, TextChangedEventArgs e)
+        {
+            List<char> wrongChars = new List<char>();
+            foreach (var i in Eredmenyek.Text)  {   if ("12Xx".IndexOf(i) == -1) wrongChars.Add(i);  }
+
+            TextLengthCBox.Content = $"Karakterlánc hossza: {Eredmenyek.Text.Length}";
+            TextLengthCBox.IsChecked = Eredmenyek.Text.Length == 14;
+
+            IncorrectCharCBox.IsChecked = wrongChars.Count == 0;
+            if(IncorrectCharCBox.IsChecked == true) { IncorrectCharCBox.Content = "Helytelen karakter az eredményekben: Nincs"; }
+            else { IncorrectCharCBox.Content = $"Helytelen karakter az eredményekben: {string.Join(";", wrongChars)}"; }
+
+            if(IncorrectCharCBox.IsChecked == true & TextLengthCBox.IsChecked == true) { SubmitBtn.IsEnabled = true; }
+            else { SubmitBtn.IsEnabled = false; }
+        }
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
 
@@ -33,21 +48,6 @@ namespace TotoGUI
         private void CheckBox_Checked_1(object sender, RoutedEventArgs e)
         {
 
-        }
-
-        private void Eredmenyek_TextChanged_1(object sender, TextChangedEventArgs e)
-        {
-            TextLengthCBox.Content = "Megfelelő a karakterlánc hossza: ";
-            if (Eredmenyek.Text.Length == 14)
-            {
-                TextLengthCBox.IsChecked = true;
-                TextLengthCBox.Content += $"{Eredmenyek.Text.Length + " " + ((char)0x221A).ToString()}";
-            }
-
-            else
-            {
-
-            }
         }
     }
 }
